@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetal Health Classifier</title>
+</head>
+
+<body>
+
+    <div style="color: blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Fetal Health Classifier</h2>
+            <h4><i>take the cardiotocogram (CTG) results and input it into the fields below to determine the fetus' health</i></h4>
+            
+            <h3>Baseline Fetal Heart Rate</h3>
+            <input id="1" name="FHR" required="required">
+            
+            <h3>Number of Accelerations (per second)</h3>
+            <input id="2" name="acc" required="required">
+            
+            <h3>Number of Fetal Movements (per second)</h3>
+            <input id="3" name="movement" required="required">
+            
+            <h3>Number of Uterine Contractions (per second)</h3>
+            <input id="4" name="contractions" required="required">
+
+            <h3>Number of Light Decelerations (per second)</h3>
+            <input id="5" name="ldec" required="required">
+
+            <h3>Number of Severe Decelerations (per second)</h3>
+            <input id="6" name="sdec" required="required">
+
+            <h3>Number of Prolonged Decelerations (per second)</h3>
+            <input id="7" name="pdec" required="required">
+
+            <h3>Percentage of Time with Abnormal Short Term Variability</h3>
+            <input id="8" name="percentSTV" required="required">
+
+            <h3>Mean Abnormal Short Term Variability</h3>
+            <input id="9" name="meanSTV" required="required">
+
+            <h3>Percentage of Time with Abnormal Long Term Variability</h3>
+            <input id="10" name="percentLTV" required="required">
+
+            <h3>Mean Abnormal Long Term Variability</h3>
+            <input id="11" name="meanLTV" required="required">
+            
+            <br><br>
+            <button id="sub" type="submit">Classify Fetal Health</button>
+            <br>
+        </form>
+
+        <h3>{{ prediction_text }}<h3>
+    </div>
+
+    <style>
+        body {
+            background-color: palevioletred;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: orange;
+        }
+    </style>
+
+</body>
+
+</html>
