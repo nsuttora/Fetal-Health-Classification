@@ -16,5 +16,7 @@
 - Model Comparison & Selection
 - Saving Model for Deployment
 
+https://github.com/nsuttora/Fetal-Health-Classification/blob/main/fetal_health_classification.ipynb
+
 ## Check It Out For Yourself!
 Deplopyed here: https://fetal-health-classification.herokuapp.com
